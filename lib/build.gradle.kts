@@ -32,6 +32,8 @@ dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation("com.google.guava:guava:29.0-jre")
 
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.16.0")
+
     // Use the Kotlin test library.
     testImplementation("org.jetbrains.kotlin:kotlin-test")
 
