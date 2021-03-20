@@ -24,7 +24,7 @@ internal class ShinglerTest {
         assertEquals(expected, actual)
     }
 
-    @Test fun `shingle length larger lhan number of tokens`() {
+    @Test fun `shingle length larger than number of tokens`() {
         // given
         val shingler = Shingler()
         val inputSentence = listOf("The", "quick", "brown")
