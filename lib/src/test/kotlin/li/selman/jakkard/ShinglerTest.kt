@@ -2,8 +2,6 @@ package li.selman.jakkard
 
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertSame
-import kotlin.test.assertTrue
 
 internal class ShinglerTest {
 
@@ -22,6 +20,21 @@ internal class ShinglerTest {
                 "brown fox jumps over the",
                 "fox jumps over the lazy",
                 "jumps over the lazy dog"
+        )
+        assertEquals(expected, actual)
+    }
+
+    @Test fun `shingle length larger lhan number of tokens`() {
+        // given
+        val shingler = Shingler()
+        val inputSentence = listOf("The", "quick", "brown")
+
+        // when
+        val actual = shingler.shingle(inputSentence, 3)
+
+        // then
+        val expected = listOf(
+            "The quick brown"
         )
         assertEquals(expected, actual)
     }

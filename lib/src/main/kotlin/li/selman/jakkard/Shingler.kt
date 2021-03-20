@@ -16,5 +16,4 @@ class Shingler {
         }
         return shingles
     }
-
 }
