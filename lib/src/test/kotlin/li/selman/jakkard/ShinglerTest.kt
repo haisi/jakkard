@@ -1,11 +1,12 @@
 package li.selman.jakkard
 
-import kotlin.test.Test
-import kotlin.test.assertEquals
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 internal class ShinglerTest {
 
-    @Test fun shingle() {
+    @Test
+    fun shingle() {
         // given
         val shingler = Shingler()
         val inputSentence = listOf("The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog")
@@ -21,10 +22,11 @@ internal class ShinglerTest {
                 "fox jumps over the lazy",
                 "jumps over the lazy dog"
         )
-        assertEquals(expected, actual)
+        assertThat(expected).isEqualTo(actual)
     }
 
-    @Test fun `shingle length larger than number of tokens`() {
+    @Test
+    fun shingleLengthLargerThanNumberOfTokens() {
         // given
         val shingler = Shingler()
         val inputSentence = listOf("The", "quick", "brown")
@@ -36,6 +38,6 @@ internal class ShinglerTest {
         val expected = listOf(
             "The quick brown"
         )
-        assertEquals(expected, actual)
+        assertThat(expected).isEqualTo(actual)
     }
 }
