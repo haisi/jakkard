@@ -6,7 +6,7 @@ import kotlin.random.Random
 object MinHasher {
 
     // TODO(#API): Figure out a better way to configure seed for rnd
-    var seed: Int? = null
+    var seed: Int = 42
 
     /**
      * Generates the MinHash for the shingles of a single document by calculating the minimum hash value for each
@@ -26,12 +26,7 @@ object MinHasher {
     }
 
     private fun createHashNumbers(numberOfHashes: Int): List<Int> {
-        val tmpSeed = seed
-        val rnd = if (tmpSeed != null) {
-            Random(tmpSeed)
-        } else {
-            Random
-        }
+        val rnd = Random(seed)
 
         return List(numberOfHashes) { rnd.nextInt() }
     }
